@@ -1,3 +1,5 @@
+'''See line 263'''
+
 # YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
 """
 Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
@@ -257,7 +259,10 @@ def run(
 
         # # Print time (inference-only)
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
-        from deneme2 import send_ardunio
+
+        '''String s is manipulated throughout the code (line 201&212) so that it contains the information of detection and the bbox coordinates
+         then, it is send to our arduino code. '''
+        from serial_code import send_ardunio
         
         send_ardunio(s)
 
@@ -270,7 +275,6 @@ def run(
     if update:
         strip_optimizer(weights[0])  # update model (to fix SourceChangeWarning)
 
-    #return returaq
     
 
 def parse_opt():

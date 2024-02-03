@@ -21,62 +21,29 @@ void setup() {
 }
 
 void loop() {
-  int dist = measureDistance();
-  // Measure distance using ultrasonic sensor
+  int dist = measureDistance(); // calculate the distance with an obstacle through ultrasonic sensor
 
   Serial.print("Distance: ");
   Serial.print(dist);
   Serial.println(" cm");
 
-  // Adjust motor speed and direction based on distance
-  // if (dist < 20) { // Adjust the distance threshold as needed
-  //   // Object detected, stop and turn
-  //   stopMotors();
-  // } else {
-  //   // Logo tespiti sonuçlarına göre motorları kontrol et
-  //   if (Serial.available() > 0) {
-  //     int command = Serial.parseInt();
+  if (dist >= 20) { // If greater than 20, the obstacle not in the way (can be changed), look for the result that comes from YOLO, move or stop accordingly
 
-  //     // Gelen komutlara göre motorları kontrol et
-  //     if (command == 1) {
-  //       // 1 geldiğinde sağa dön
-  //       turnRight();
-  //     } else if (command == -1) {
-  //       // -1 geldiğinde sola dön
-  //       turnLeft();
-  //     } else if (command == 0) {
-  //       // 0 geldiğinde düz git
-  //       moveForward();
-  //     } else if (command == 404) {
-  //       // 404 geldiğinde motorları durdur
-  //       stopMotors();
-  //     }
-  //   }
-  // }
-
-  if (dist >= 20) { // Adjust the distance threshold as needed
-    // Object detected, stop and turn
-    
     if (Serial.available() > 0) {
       int command = Serial.parseInt();
 
-      // Gelen komutlara göre motorları kontrol et
       if (command == 1) {
-        // 1 geldiğinde sağa dön
         turnRight();
       } else if (command == -1) {
-        // -1 geldiğinde sola dön
         turnLeft();
       } else if (command == 0) {
-        // 0 geldiğinde düz git
         moveForward();
       } else if (command == 404) {
-        // 404 geldiğinde motorları durdur
         stopMotors();
       }
     }
   } else {
-    // Logo tespiti sonuçlarına göre motorları kontrol et
+
     stopMotors();
   }
 }
@@ -93,8 +60,8 @@ int measureDistance() {
 }
 
 void moveForward() {
-  analogWrite(9, 100); // ENA pin
-  analogWrite(10, 100); // ENB pin
+  analogWrite(9, 100); 
+  analogWrite(10, 100); 
 
   digitalWrite(motor1pin1, HIGH);
   digitalWrite(motor1pin2, LOW);
@@ -113,8 +80,8 @@ void stopMotors() {
 
 void turnRight() {
 
-  analogWrite(9, 50); // ENA pin
-  analogWrite(10, 100); // ENB pin
+  analogWrite(9, 50); 
+  analogWrite(10, 100); 
   digitalWrite(motor1pin1, HIGH);
   digitalWrite(motor1pin2, LOW);
 
@@ -124,8 +91,8 @@ void turnRight() {
 }
 
 void turnLeft() {
-  analogWrite(9, 100); // ENA pin
-  analogWrite(10, 50); // ENB pin
+  analogWrite(9, 100); 
+  analogWrite(10, 50); 
 
   digitalWrite(motor1pin1, LOW);
   digitalWrite(motor1pin2, HIGH);

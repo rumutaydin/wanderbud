@@ -1,20 +1,24 @@
-# Wanderbud: AI-Powered Suitcase with Object Detection
+# Wanderbud: AI-Powered Suitcase that Follows its Owner
 
 ## Overview
 
-Wanderbud is an innovative project that brings together the power of artificial intelligence and robotics to create a suitcase that autonomously follows its owner. The project utilizes a Raspberry Pi 4, Arduino Uno, an ultrasonic sensor, a motor driver, and two DC motors. The key feature of Wanderbud is its ability to track its owner using object detection with YOLOv5, a deep learning model.
+Wanderbud is an innovative project that brings together the power of artificial intelligence and robotics to create a suitcase that autonomously follows its owner. The key feature of Wanderbud is its ability to track its owner using object detection with YOLOv5, a deep learning model.
 
 ## Hardware Components
 
-- Raspberry Pi 4
+- Raspberry Pi 4 model B+
 - Arduino Uno
 - Ultrasonic Sensor
 - Motor Driver
 - 2 DC Motors
+- 4 1.5V battery(for arduino)
+- 5V=2.4A Powerbank(for raspi)
+- Serial cable
+- Male&female jumper wires
 
 ## Object Detection Model
 
-We designed various logos for our brand, Wanderbud, and created a custom dataset, manually labeling the images. The dataset, along with our colored logos, is provided in the project. We trained the YOLOv5 model with our dataset using Ultralytics instructions and Google Colab. Due to the absence of ML inference accelerators in the hardware, we opted for TensorFlow Lite inference and quantization to int8 and fp16 models to optimize performance.
+We designed various logos for our brand, Wanderbud, and created a custom dataset, manually labeling the images. The dataset, along with our colored logos, is provided in the project. We trained the YOLOv5 model(yolov5s.pt checkpoint) with our dataset using Ultralytics instructions and Google Colab. Due to the absence of ML inference accelerators in the hardware, we opted for TensorFlow Lite inference and quantization to int8 and fp16 models to optimize performance.
 
 ## Software Components
 
@@ -45,6 +49,3 @@ This Python script manages the communication with the Arduino by sending relevan
 3. Upload the `lastard.ino` code to the Arduino Uno.
 4. Run the `detect.py` script, which will invoke the `serial_code.py` for communication with the Arduino.
 
-Now, Wanderbud should be ready to autonomously follow its owner, avoiding obstacles along the way.
-
-Feel free to explore and contribute to the project!

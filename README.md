@@ -6,6 +6,8 @@ Wanderbud is an innovative project that brings together the power of artificial 
 
 Wanderbud is currently in the proof of concept phase. The project is actively progressing as we refine the logic of the robot's movement. At this stage, we acknowledge that the current approach, relying on object detection with a Wanderbud logo, is impractical as it requires users to affix the logo to themselves. We began with object detection as a starting point, aiming to limit test the concept and initiate development. However, we are now focused on updating this logic to provide a more seamless experience. Our goal is to develop a solution that doesn't necessitate the use of a specific marker and instead focuses on efficient and intuitive tracking mechanisms. Stay tuned for updates as we continue to enhance Wanderbud's functionality.
 
+![Wanderbud Demo GIF](repo/gif.gif)
+
 ## Object Detection Model
 
 We designed various logos for our brand, Wanderbud, and created a custom dataset, manually labeling the images. The dataset, along with our colored logos, is provided in the project. We trained the YOLOv5 model (yolov5s.pt checkpoint) with our dataset using Ultralytics instructions and Google Colab. Due to the absence of ML inference accelerators in the hardware, we opted for TensorFlow Lite inference and quantization to int8 and fp16 models to optimize performance.

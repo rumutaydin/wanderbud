@@ -9,11 +9,16 @@ Wanderbud is currently in the proof of concept phase. The project is actively pr
 ## Demo
 
 <div style="display:flex;">
-  <img src="repo/img.jpg" alt="Wanderbud Image" width="400" />
-  <img src="repo/gif.gif" alt="Wanderbud Demo GIF" width="400" />
+  <div style="margin-right: 20px;">
+    <img src="repo/img.jpg" alt="Wanderbud Image" width="400" style="width: 100%;" />
+  </div>
+  <div>
+    <img src="repo/gif.gif" alt="Wanderbud Demo GIF" width="400" style="width: 100%;" />
+  </div>
 </div>
 
 Here's an image of Wanderbud along with a GIF demonstrating it in action.
+
 
 
 ## Object Detection Model

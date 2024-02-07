@@ -9,11 +9,16 @@ Wanderbud is currently in the proof of concept phase. The project is actively pr
 ## Demo
 
 <div style="display:flex;">
-  <img src="repo/img.jpg" alt="Wanderbud Image" width="400" />
-  <img src="repo/gif.gif" alt="Wanderbud Demo GIF" width="400" />
+  <div style="flex:1; margin-right:20px;">
+    <img src="relative_path_to_your_image.png" alt="Wanderbud Image" style="max-width:40%;" />
+  </div>
+  <div style="flex:1;">
+    <img src="relative_path_to_your_gif.gif" alt="Wanderbud Demo GIF" style="max-width:40%;" />
+  </div>
 </div>
 
 Here's an image of Wanderbud along with a GIF demonstrating it in action.
+
 
 
 

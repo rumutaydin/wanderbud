@@ -63,8 +63,16 @@ This Python script manages the communication with the Arduino by sending relevan
 
 ## How to Build and Run
 
-1. Clone the repository from GitHub.
-2. Replace the original YOLOv5 `detect.py` file with our customized version.
-3. Upload the `lastard.ino` code to the Arduino Uno.
-4. Run the `detect.py` script, which will invoke the `serial_code.py` for communication with the Arduino.
+1. Clone this repository and YOLOv5 repository from GitHub to your raspi.
+
+       git clone https://github.com/ultralytics/yolov5.git
+       git clone https://github.com/rumutaydin/wanderbud.git
+3. Replace the original YOLOv5 `detect.py` file with our customized version.
+4. Copy a checkpoint from 'checkpoints' or train a new one with the dataset provided. Then, create a folder named 'weights' in the root directory of yolo and paste the model checkpoint here.
+5. Integrate the hardware.
+6. Upload the `lastard.ino` code to the Arduino Uno.
+7. Run the `detect.py` script, which will invoke the `serial_code.py` for communication with the Arduino.
+   
+       cd yolov5
+       python detect.py --weights weights/your_checkpoint.pt --source 0
 
